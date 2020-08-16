@@ -1,0 +1,159 @@
+/*
+body {
+    background-color: #eed;
+}
+*/
+
+#vf-xyz .vf-note .vf-notehead path:hover{
+    /*fill: red;
+    /*
+    outline: solid 3px blue;
+    /*
+    animation-iteration-count: 1;
+    animation: mymove 3s forwards ease-in-out;
+    */
+
+}
+
+.vf-modifiers text:hover{
+    
+    /*font-size: 12pt;
+    /*transform: translate(-20px,0px);
+    /* text-shadow: 0 0 2px black,0 0 2px black; */
+    /*border: 5px solid red;
+    /* background: solid blue; */
+    /*display: table;margin: 10px auto;padding: 5px;
+    /* fill: white; */
+    /*z-index: 10000;
+    
+    text-shadow: 0px 0px 35px lightgray,0px 0px 35px lightgray,
+    0px 0px 35px lightgray,0px 0px 35px lightgray;
+    /*
+    animation-iteration-count: 1;
+    animation: mymove 3s forwards ease-in-out;
+    */
+
+}
+
+/*
+.vf-modifiers text:nth-of-type(1n) {
+    --dir1: 2.6%;
+    --dir2: 2.6%;
+    animation: scale 3s;
+}
+.vf-modifiers text:nth-of-type(2n) {
+    --dir1: 2.6%;
+    --dir2: -2.6%;
+    animation: mymove3 3s forwards;
+}
+.vf-modifiers text:nth-of-type(3n) {
+    --dir1: 1%;
+    --dir2: 1%;
+    animation: mymove3 3s forwards;
+}
+.vf-modifiers text:nth-of-type(4n) {
+    --dir1: 1%;
+    --dir2: -1%;
+    animation: mymove3 3s forwards;
+}
+*/
+
+#vf-xyz .vf-note .vf-notehead path:active, #vf-xyz .vf-modifiers path:active{
+    /*fill: red;*/
+    /*animation: mymove2 2s forwards;
+    /* transform: translate(74px,0px);
+    transform: rotate(-30deg); */
+}
+
+#vf-xyz:active{/*fill: red;*/
+    /*
+    transform-origin: initial;
+    animation: roll 2s forwards;
+    /* transform: translate(74px,0px);
+    transform: rotate(-30deg); */
+}
+
+/* Safari compatible highlight: */
+
+/*
+
+.vf-stavenote .vf-note .vf-notehead path{
+    -webkit-position:relative;
+    position:relative;
+    stroke: red; 
+    /*stroke-width: 5; stroke: red;*/
+    /*
+    animation: redcolor 2s infinite;
+}
+
+@keyframes redcolor {
+    
+    0%   {left: 0px; top: 0px;}
+    50% {fill: red; }
+    52% {stroke-width: 15;}
+  }
+
+*/
+
+/*
+.vf-notehead:active{
+    -webkit-position:relative;
+    position:relative;
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    animation: scale 2s forwards;
+}
+*/
+
+#vf-xyz:hover {
+/*
+    outline: solid 3px red;
+/*
+    -webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+    */
+}
+
+@keyframes roll {
+    
+    0%   {left: 0px; top: 0px;}
+    50% {-webkit-transform: rotate(45deg);}
+  }
+
+  @keyframes scale {
+    
+    0%   {left: 0px; top: 0px;}
+    50% {transform: scale(2);}
+  }
+@keyframes mymove {
+    0%   {left: 0px; top: 0px;}
+    10% {transform:skew(5deg)}
+    25%  {left: 5px; top: 0px;}
+    50%  {left: -5px; top: -5px;}
+    60% {transform:rotate(360deg)}
+    75%  {left: 0px; top: -5px;}
+    100% {left: 0px; top: 0px;}
+  }
+
+  @keyframes mymove2 {
+    0%   {left: 0px; top: 0px;}
+    5% {transform: translate(0px,-20px);}
+    49% {transform: translate(0px,-20px);}
+    50% {outline: solid 3px red;}
+    50% {transform: translate(3px,-20px);}
+    51% {transform: translate(-3px,-20px);}
+    52% {transform: translate(3px,-20px);}
+    53% {transform: translate(0px,-20px);}
+    95% {transform: translate(0px,-20px);}
+    100% {transform: translate(0px,0px);}
+  }
+
+  @keyframes mymove3 {
+    
+    0%   {left: 0px; top: 0px;}
+    /*100% {transform: translate(var(--dir1),var(--dir2));}
+    /*100% {-webkit-transform: translate(var(--dir1),var(--dir2));}*/
+    100% {-webkit-transform: translate3d(var(--dir1),var(--dir2), 0);}
+  }

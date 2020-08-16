@@ -1,0 +1,15 @@
+webpackHotUpdatescore_component("main",{
+
+/***/ "./src/lib/components/Orchestration.js":
+/*!*********************************************!*\
+  !*** ./src/lib/components/Orchestration.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\src\\lib\\components\\Orchestration.js: Unexpected token, expected \";\" (217:41)\n\n\u001b[0m \u001b[90m 215 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 216 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 217 | \u001b[39m    componentWillReceiveProps(nextProps) {   \u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 218 | \u001b[39m        \u001b[36mif\u001b[39m (\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mprops\u001b[33m.\u001b[39mnotes \u001b[33m!==\u001b[39m nextProps\u001b[33m.\u001b[39mnotes){\u001b[0m\n\u001b[0m \u001b[90m 219 | \u001b[39m            \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mnet\u001b[33m.\u001b[39msetNotes( nextProps\u001b[33m.\u001b[39mnotes )\u001b[0m\n\u001b[0m \u001b[90m 220 | \u001b[39m        } \u001b[0m\n    at Object._raise (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:742:17)\n    at Object.raiseWithData (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:735:17)\n    at Object.raise (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:729:17)\n    at Object.unexpected (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:8779:16)\n    at Object.semicolon (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:8761:40)\n    at Object.parseExpressionStatement (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:11637:10)\n    at Object.parseStatementContent (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:11238:19)\n    at Object.parseStatement (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:11104:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:11679:25)\n    at Object.parseBlockBody (C:\\Users\\Uljas\\Documents\\FullStack\\score_component\\node_modules\\@babel\\parser\\lib\\index.js:11665:10)");
+
+/***/ })
+
+})
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiI2NDkwNTczLW1haW4td3BzLWhtci5qcyIsInNvdXJjZVJvb3QiOiIifQ==

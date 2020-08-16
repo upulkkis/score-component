@@ -1,0 +1,10 @@
+/* eslint-disable import/prefer-default-export */
+import ScoreComponent from './components/ScoreComponent.react';
+import Stave from './components/Stave';
+import Orchestration from './components/Orchestration';
+
+export {
+    ScoreComponent,
+    Stave,
+    Orchestration
+};

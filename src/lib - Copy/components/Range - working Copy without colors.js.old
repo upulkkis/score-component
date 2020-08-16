@@ -1,0 +1,151 @@
+import Vex from 'vexflow';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
+const VF = Vex.Flow;
+
+export default class Range extends Component {
+
+    constructor(props) {
+        super(props);
+        this.notes=0;
+        this.target=0;
+        this.instruments=0;
+        this.renderer=0;
+        this.context=0;
+        this.state = {
+            x: 0,
+            y: 0,
+
+        };
+    };
+    
+    setupScore() {
+                
+        function separate(MyNotes) {
+
+            var new_key = MyNotes[0];
+            var new_octave = MyNotes[MyNotes.length-1];
+            if (MyNotes.length>2){
+                var new_accidential = MyNotes[1]; 
+            } else {
+                var new_accidential = "n";
+            }
+
+            var new_note = new_key.concat("/",new_octave)
+            
+            return [new_note, new_accidential]
+        }
+
+        const svgContainer = document.createElement('div');
+        const {id, width, height, notes} = this.props;
+        var padding = 30;
+        var renderer = new VF.Renderer(svgContainer, VF.Renderer.Backends.SVG);
+        
+        renderer.resize(width+padding, height);
+        var vf = new VF.Factory({renderer: renderer});
+        //var system = vf.System(renderer.getContext())//.setContext(renderer.getContext())
+
+        //var context = renderer.getContext();
+        //var stave = new VF.Stave(padding, 30, width)
+        //var firstClef = 'treble'
+        //stave.addClef(firstClef)
+        //stave.setContext(context).draw();
+        var stave = vf.Stave(padding, 30, width).addTrebleGlyph().setWidth(500);
+
+        var note_list=[]
+        var lines =[]
+        //var voice=[]
+        //var voice = new VF.Voice({num_beats: 4,  beat_value: 4}).setMode(2);
+        for(var i=0;i<notes.length;i++){
+            var note = separate(notes[i])
+            var newClef='treble'
+            //var new_note = new VF.StaveNote({clef: newClef, keys: [note[0]], duration: "q"})
+            //new_note.addAccidental(0, new VF.Accidental(note[1]))
+            //note_list.push(new_note)
+            note_list.push(vf.StaveNote({keys: [note[0]], duration:'4', clef: newClef}).addAccidental(0, new VF.Accidental(note[1])))
+        }
+        
+        //voice.addTickables(note_list);
+        var voices = vf.Voice().setMode(2).addTickables(note_list)
+        for(var i=1;i<notes.length;i++){
+            //var line = new VF.StaveLine({from: note_list[i-1], to: note_list[i], first_indices: [0],
+            //    last_indices: [0],})
+            //line.setNotes({first_note: notes[i-1], last_note: notes[i]})
+            lines.push(vf.StaveLine({from: note_list[i-1], to: note_list[i], first_indices: [0],
+                last_indices: [0],}))
+        }
+
+        //var formatter = new VF.Formatter().joinVoices([voice]).format([voice], width-padding);
+        var formatter = new VF.Formatter().joinVoices([voices]).format([voices], width-padding);//.formatToStave([voices], stave);
+
+        vf.draw()
+        //voice.draw(context, stave);
+        this.refs.outer5.appendChild(svgContainer);
+    }
+
+    componentDidMount() {
+        this.setupScore();
+    }
+
+    componentDidUpdate(prevProps) {
+        //if (this.notes !== prevProps.notes || this.instruments !== prevProps.instruments || this.target !== prevProps.target){
+        //const {id} = this.props;
+        var element = this.refs.outer3
+        while (element.hasChildNodes()) {
+            element.removeChild(element.lastChild);
+        }
+        this.setupScore()
+        }
+    
+    /*
+    componentWillReceiveProps(nextProps) {   
+        if (this.notes !== nextProps.notes || this.instruments !== nextProps.instruments || this.target !== nextProps.target){
+            this.notes = nextProps.notes
+            this.instruments = nextProps.instruments
+            this.target = nextProps.target
+
+        } 
+    }
+
+
+shouldComponentUpdate(nextProps){
+        return (this.props.notes !== nextProps.notes || this.props.instruments !== nextProps.instruments || this.props.target !== nextProps.target);
+}
+  */
+
+    render() {
+        const {id, width, height, notes}=this.props;
+        return <div id={id} ref="outer5" style={{
+            border: "none",
+            padding: 0,
+            borderRadius: 0,
+            display: "inline-block",
+        }}         
+        >
+        </div>;
+    }
+
+}
+
+Range.defaultProps = {};
+
+Range.propTypes = {
+    /**
+     * The ID used to identify this component in Dash callbacks.
+     */
+    id: PropTypes.string,
+
+    /**
+     * A label that will be printed when this component is rendered.
+     */
+    width: PropTypes.number,
+    height: PropTypes.number,
+    notes: PropTypes.array,
+
+    /**
+     * Dash-assigned callback that should be called to report property changes
+     * to Dash, to make them available for callbacks.
+     */
+    setProps: PropTypes.func
+};

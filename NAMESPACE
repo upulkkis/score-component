@@ -1,0 +1,13 @@
+# AUTO GENERATED FILE - DO NOT EDIT
+
+export(''Edit)
+export(''Masking)
+export(''Orchestration)
+export(''Pianoinput)
+export(''Pianoroll)
+export(''Range)
+export(''ScoreComponent)
+export(''Stave)
+export(update)
+export(colors)
+export(Stave)
